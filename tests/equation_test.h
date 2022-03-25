@@ -3,6 +3,7 @@
 
 #include <gtest/gtest.h>
 #include <gmock/gmock-matchers.h>
+#include <math.h>
 
 extern "C"
 {
@@ -33,6 +34,15 @@ TEST(equationTest, ret1)
 result(1, 2, 1);
 ASSERT_EQ(ret, 1);
 ASSERT_TRUE(x1 == -1);
+}
+
+TEST(equationTest, isNan)
+{
+    double x1, x2;
+
+    solveQuadraticEquation(1, 2, 2, &x1, &x2);
+
+    ASSERT_FALSE(isnan(x1) || isnan(x2));
 }
 
 /*Негативные тесты*/

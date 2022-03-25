@@ -15,9 +15,7 @@ int solveQuadraticEquation(double a, double b, double c, double *x1, double *x2)
         *x1 = (-b - sqrt(d))/(2*a);
         *x2 = (-b + sqrt(d))/(2*a);
 
-        if (d == 0)
-            return 1;
-        return 2;
+        return (d == 0)? 1 : 2;
     }
     return 0;
 }
